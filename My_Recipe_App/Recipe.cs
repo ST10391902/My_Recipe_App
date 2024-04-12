@@ -11,7 +11,7 @@ namespace RecipeApp
         private string[] steps;    // Array to store steps
 
         // Constructor
-        public Recipe()
+        public Recipe() 
         {
             ingredients = new Ingredient[0];
             steps = new string[0];
