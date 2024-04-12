@@ -53,7 +53,7 @@ namespace RecipeApp
             Console.WriteLine("2. View a recipe");
             Console.WriteLine("3. ScaledRecipe");
 
- Console.WriteLine("4. Exit");
+            Console.WriteLine("4. Exit");
             Console.Write("Enter your choice: ");
         }
 
