@@ -10,7 +10,7 @@ namespace RecipeApp
         public double Quantity { get; }    // Quantity of the ingredient
         public string Unit { get; }    // Unit of measurement for the ingredient
 
-        // Constructor
+        // Constructor 
         public Ingredient(string name, double quantity, string unit)
         {
             Name = name;
