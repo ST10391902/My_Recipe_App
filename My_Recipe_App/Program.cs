@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata;
 
 namespace RecipeApp
 {
@@ -10,12 +11,59 @@ namespace RecipeApp
         {
             // Welcome message
             Console.WriteLine("Welcome to the Recipe App!");
+            Recipe recipe = new Recipe();
+            bool exit = false;
+            while (!exit)
+            {
+                // Display the menu
+                DisplayMenu();
 
-            // Create a new recipe instance
+                // Get user choice
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        recipe = CreateRecipe();
+                        break;
+                    case "2":
+                        Console.WriteLine(recipe);
+                        break;
+                    case "3":
+                      // recipe = ScaledRecipe();
+                        break;
+                    case "4":
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
+            }
+
+            // Farewell message
+            Console.WriteLine("\nThank you for using the Recipe App!");
+        }
+
+        // Method to display the menu
+        static void DisplayMenu()
+        {
+            Console.WriteLine("\nMenu:");
+            Console.WriteLine("1. Create a recipe");
+            Console.WriteLine("2. View a recipe");
+            Console.WriteLine("3. ScaledRecipe");
+
+ Console.WriteLine("4. Exit");
+            Console.Write("Enter your choice: ");
+        }
+
+        // Method to create a recipe
+        static Recipe CreateRecipe()
+        {
             Recipe recipe = new Recipe();
 
             // Get recipe details from the user
-            Console.Write("Enter recipe name: ");
+            Console.Write("\nEnter recipe name: ");
             recipe.Name = Console.ReadLine();
 
             Console.Write("Enter number of ingredients: ");
@@ -47,12 +95,16 @@ namespace RecipeApp
                 recipe.AddStep(stepDescription);
             }
 
+
             // Display the recipe details
             Console.WriteLine("\nRecipe Details:");
             Console.WriteLine(recipe);
 
-            // Farewell message
-            Console.WriteLine("\nThank you for using the Recipe App!");
+            return recipe;
         }
+
+
+       
+
     }
 }

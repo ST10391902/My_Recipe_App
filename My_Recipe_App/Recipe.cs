@@ -7,6 +7,8 @@ namespace RecipeApp
     {
         // Properties
         public string Name { get; set; }    // Name of the recipe
+        public IEnumerable<object> Ingredients { get; internal set; }
+
         private Ingredient[] ingredients;    // Array to store ingredients
         private string[] steps;    // Array to store steps
 
